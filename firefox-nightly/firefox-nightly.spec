@@ -8,8 +8,7 @@ AutoReqProv: no
 %global arch i686
 %endif
 
-%define buildid %(wget -O - -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}_info.txt | awk -F'=' '/buildID=/{ print $2 }')
-
+%define buildid %(curl https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}_info.txt | awk -F'=' '/buildID=/{ print $2 }')
 
 Summary:  Standalone web browser from mozilla.org, nightly build
 Name: firefox-nightly
@@ -93,12 +92,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
-* Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1.20160804030441
-- new package built with tito
-
-* Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1.20160804030441
-- new package built with tito
-
+* Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1
+- Added dynamic version detection (macieksitarz@wp.pl)
 
 * Thu Aug 4 2016  <macieksitarz AT wp DOT pl> - 51.0a1-1
 - Updated to 51.0a1
