@@ -96,6 +96,9 @@ rm -rf $RPM_BUILD_ROOT
 * Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1.20160804030441
 - new package built with tito
 
+* Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1.20160804030441
+- new package built with tito
+
 
 * Thu Aug 4 2016  <macieksitarz AT wp DOT pl> - 51.0a1-1
 - Updated to 51.0a1
