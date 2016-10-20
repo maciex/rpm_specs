@@ -92,6 +92,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
+* Thu Oct 20 2016 Maciej Sitarz 52-0a1.20161020030211
+- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
+
+* Thu Oct 20 2016 Maciej Sitarz <macieksitarz@wp.pl>
+- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
+
+* Thu Oct 20 2016 Maciej Sitarz <macieksitarz@wp.pl>
+- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
+
+* Thu Oct 20 2016 Maciej Sitarz <maciej.sitarz@pl.ibm.com>
+- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
+
 * Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1
 - Added dynamic version detection (macieksitarz@wp.pl)
 
