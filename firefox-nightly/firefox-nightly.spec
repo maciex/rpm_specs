@@ -1,6 +1,6 @@
 AutoReqProv: no
 
-%global currenf 51.0a1
+%global currenf 52.0a1
 %global _optdir /opt
 %ifarch x86_64
 %global arch x86_64
@@ -12,7 +12,7 @@ AutoReqProv: no
 
 Summary:  Standalone web browser from mozilla.org, nightly build
 Name: firefox-nightly
-Version: 51
+Version: 52
 Release: 0a1.%{buildid}%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
