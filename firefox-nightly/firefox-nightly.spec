@@ -1,6 +1,6 @@
 AutoReqProv: no
 
-%global currenf 52.0a1
+%global currenf 55.0a1
 %global _optdir /opt
 %ifarch x86_64
 %global arch x86_64
@@ -8,11 +8,11 @@ AutoReqProv: no
 %global arch i686
 %endif
 
-%define buildid %(curl https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}_info.txt | awk -F'=' '/buildID=/{ print $2 }')
+%define buildid %(curl https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}_info.txt 2>/dev/null | awk -F'=' '/buildID=/{ print $2 }')
 
 Summary:  Standalone web browser from mozilla.org, nightly build
 Name: firefox-nightly
-Version: 52
+Version: 55
 Release: 0a1.%{buildid}%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
@@ -34,7 +34,7 @@ compliance, performance and portability.
 
 
 %build
-wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2
+wget -c --no-check-certificate -P %{_builddir} https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}.tar.bz2 &>/dev/null
 tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 
 %install
@@ -92,16 +92,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
-* Thu Oct 20 2016 Maciej Sitarz 52-0a1.20161020030211
-- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
+* Mon May 22 2017 Maciej Sitarz 55-0a1.20170522100359
+- Redirect stderr of curl/wget to /dev/null
+
+* Mon May 22 2017 Maciej Sitarz <maciej.sitarz@wp.pl> 55-0a1.20170522100359
+- firefox-nightly updated to 55.0a1
 
 * Thu Oct 20 2016 Maciej Sitarz <macieksitarz@wp.pl>
-- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
-
-* Thu Oct 20 2016 Maciej Sitarz <macieksitarz@wp.pl>
-- firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
-
-* Thu Oct 20 2016 Maciej Sitarz <maciej.sitarz@pl.ibm.com>
 - firefox-nightly updated to 52.0a1 (macieksitarz@wp.pl)
 
 * Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 51-0a1
