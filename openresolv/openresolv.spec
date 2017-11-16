@@ -2,8 +2,8 @@
 
 Summary:   Management framework for resolv.conf
 Name:      openresolv
-Version:   3.8.1
-Release:   2%{?dist}
+Version:   3.9.0
+Release:   1%{?dist}
 License:   BSD
 Group:     System Environment/Base
 URL:       http://roy.marples.name/projects/openresolv
@@ -47,6 +47,9 @@ make install DESTDIR=%{buildroot}
 
 
 %changelog
+* Thu Nov 16 2017 Maciej Sitarz <macieksitarz@wp.pl> 3.9.0-1
+- New package version 3.9.0 
+
 * Fri Aug 05 2016 Maciej Sitarz <macieksitarz@wp.pl> 3.8.1-2
 - new package built with tito
 
