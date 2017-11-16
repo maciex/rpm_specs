@@ -1,6 +1,6 @@
 AutoReqProv: no
 
-%global currenf 57.0a1
+%global currenf 59.0a1
 %global _optdir /opt
 %ifarch x86_64
 %global arch x86_64
@@ -12,7 +12,7 @@ AutoReqProv: no
 
 Summary:  Standalone web browser from mozilla.org, nightly build
 Name: firefox-nightly
-Version: 57
+Version: 59
 Release: 0a1.%{buildid}%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
+* Thu Nov 16 2017 Maciej Sitarz <macieksitarz@wp.pl> 59-0a1.20171116100106
+- Updated to 59.0a1 
+
 * Sun Aug 20 2017 Maciej Sitarz <macieksitarz@wp.pl> 57-0a1.20170820100343
 - Updated to 57.0a1
 
