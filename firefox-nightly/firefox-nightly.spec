@@ -42,7 +42,7 @@ tar -jxvf firefox-%{currenf}.en-US.linux-*.tar.bz2  -C %{_builddir}
 install -dm 755 %{buildroot}/{usr/{bin,share/{applications,pixmaps}},opt}
 install -dm 755 %{buildroot}/%{_optdir}/firefox-%{version}/browser/defaults/preferences/
 
-install -m644 %{_builddir}/firefox/browser/icons/mozicon128.png %{buildroot}/usr/share/pixmaps/%{name}-icon.png
+install -m644 %{_builddir}/firefox/browser/chrome/icons/default/default128.png %{buildroot}/usr/share/pixmaps/%{name}-icon.png
 cp -rf %{_builddir}/firefox/* %{buildroot}/opt/firefox-%{version}/
 ln -s /opt/firefox-%{version}/firefox %{buildroot}/usr/bin/firefox-nightly
 
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
+* Fri Dec 01 2017 Maciej Sitarz <macieksitarz@wp.pl> 59-0a1.20171201100115
+- Fix icons copying during build 
+
 * Thu Nov 16 2017 Maciej Sitarz <macieksitarz@wp.pl> 59-0a1.20171116100106
 - Updated to 59.0a1 
 
