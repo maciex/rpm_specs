@@ -1,15 +1,5 @@
 AutoReqProv: no
 
-%global currenf 59.0a1
-%global _optdir /opt
-%ifarch x86_64
-%global arch x86_64
-%else
-%global arch i686
-%endif
-
-%define buildid %(curl https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}_info.txt 2>/dev/null | awk -F'=' '/buildID=/{ print $2 }')
-
 Summary:  Standalone web browser from mozilla.org, nightly build
 Name: firefox-nightly
 Version: 60
@@ -25,6 +15,16 @@ Requires: alsa-lib libX11 libXcomposite libXdamage libnotify libXt libXext glib2
 Requires: nspr >= 4.10.8
 Requires: nss >= 3.19.2
 Requires: sqlite >= 3.8.10.2
+
+%global currenf %{version}.0a1
+%global _optdir /opt
+%ifarch x86_64
+%global arch x86_64
+%else
+%global arch i686
+%endif
+
+%define buildid %(curl https://archive.mozilla.org/pub/firefox/nightly/latest-mozilla-central/firefox-%{currenf}.en-US.linux-%{arch}_info.txt 2>/dev/null | awk -F'=' '/buildID=/{ print $2 }')
 
 %description
 Mozilla Firefox is an open-source web browser, designed for standards 
@@ -92,6 +92,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
+* Mon Feb 05 2018 Maciej Sitarz <macieksitarz@wp.pl> 60-0a1.%{buildid}
+- 
+
+* Mon Feb 05 2018 Maciej Sitarz <macieksitarz@wp.pl>
+- Fix version bump to 60.0a1
+
 * Mon Feb 05 2018 Maciej Sitarz <macieksitarz@wp.pl> 60-0a1.20180122100120
 - Updated to 60.0a1
 
