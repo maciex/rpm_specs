@@ -12,7 +12,7 @@ AutoReqProv: no
 
 Summary:  Standalone web browser from mozilla.org, nightly build
 Name: firefox-nightly
-Version: 59
+Version: 60
 Release: 0a1.%{buildid}%{?dist}
 License: MPLv1.1 or GPLv2+ or LGPLv2+
 Group: Applications/Internet
@@ -92,6 +92,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_optdir}/firefox-%{version}/
 
 %changelog
+* Mon Feb 05 2018 Maciej Sitarz <macieksitarz@wp.pl> 60-0a1.20180122100120
+- Updated to 60.0a1
+
 * Fri Dec 01 2017 Maciej Sitarz <macieksitarz@wp.pl> 59-0a1.20171201100115
 - Fix icons copying during build 
 
